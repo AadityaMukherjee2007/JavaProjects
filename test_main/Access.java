@@ -1,8 +1,9 @@
-class Access extends AccessSpecifier
+package test_main;
+public class Access
 {
-    AccessSpecifier obj = new AccessSpecifier();
-    public void print()
+    public static void main(String args[])
     {
+        AccessSpecifier obj = new AccessSpecifier();
         //System.out.println("Class Name: " + obj.ClassName);
         /*
          * The above statement will throw a compilation error because the 
@@ -12,7 +13,7 @@ class Access extends AccessSpecifier
         /*
          * The above statement can easily print the variable ClassType
          * since it has protected access which can be accessed by a 
-         * subclass but not any other class.
+         * subclass or a class of the same package but not any other class.
          */
         System.out.println("Class Info: " + obj.ClassInfo);
         /*

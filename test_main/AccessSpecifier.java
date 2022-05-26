@@ -1,3 +1,4 @@
+package test_main;
 public class AccessSpecifier
 {
     private String ClassName = "AccessSpecifier";
