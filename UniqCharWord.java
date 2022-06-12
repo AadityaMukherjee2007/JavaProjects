@@ -1,42 +1,89 @@
 import java.util.Scanner;
 public class UniqCharWord
 {
-    String str1 = "", str2 = "";
+    String str1, str2;
     public boolean check(String str)
     {
         for (int i = 0; i < str.length(); i++)
         {
-            for (int j = (i + 1); i < str.length(); j++)
+            int c = 0;
+            for (int j = 0; j < str.length(); j++)
             {
                 if (str.charAt(i) == str.charAt(j))
                 {
-                    return false;
+                    c++;
                 }
+            }
+            if (c > 1)
+            {
+                return false;
             }
         }
         return true;
     }
+
     public void in()
     {
-        input:
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Word: ");
-        String str = sc.next();
-        
-        if (str == "q" || str == "e")
+        String str;
+        while (true)
         {
-            System.exit(0);
+            System.out.print("Enter Word: ");
+            str = sc.next();
+            if (str == "q" || str == "e")
+            {
+                System.exit(0);
+            }
+            if (check(str) == false)
+            {
+                System.out.println("Error!\nEnter Unique Word.");
+                continue;
+            }
+            else
+            {
+                str1 = str;
+                break;
+            }
         }
         
-        if ()
+        while (true)
         {
-            
+            System.out.print("Enter Word: ");
+            str = sc.next();
+            if (str == "q" || str == "e")
+            {
+                System.exit(0);
+            }
+            if (check(str) == false)
+            {
+                System.out.println("Error!\nEnter Unique Word.");
+                continue;
+            }
+            else
+            {
+                str2 = str;
+                break;
+            }
         }
     }
+    
+    public String commonWord()
+    {
+        String str;
+        return str;
+    }
+    
+    public String uncommonWord()
+    {
+        String str;
+        return str;
+    }
+
     public static void main(String args[])
     {
         UniqCharWord obj = new UniqCharWord();
         obj.in();
-        if 
+        String commonWord = obj.commonWord(), uncommonWord = obj.uncommonWord();
+        
     }
 }
