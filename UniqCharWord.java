@@ -94,6 +94,6 @@ public class UniqCharWord
         UniqCharWord obj = new UniqCharWord();
         obj.in();
         String commonWord = obj.commonWord(), uncommonWord = obj.uncommonWord();
-        
+        System.out.println("Common Word: " + commonWord); 
     }
 }
