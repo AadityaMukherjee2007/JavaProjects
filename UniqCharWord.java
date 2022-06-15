@@ -45,7 +45,7 @@ public class UniqCharWord
                 break;
             }
         }
-        
+
         while (true)
         {
             System.out.print("Enter Word: ");
@@ -66,26 +66,68 @@ public class UniqCharWord
             }
         }
     }
-    
+
     public String commonWord()
     {
         String str = "";
-	for (int i = 0; i < str1.length(); i++)
-	{
-		for (int j = 0; j < str2.length(); j++)
-		{
-			if (str1.charAt(i) == str2.charAt(j))
-			{
-				str += str1.charAt(i);
-			}
-		}
-	}
-	return str;
+        for (int i = 0; i < str1.length(); i++)
+        {
+            for (int j = 0; j < str2.length(); j++)
+            {
+                if (str1.charAt(i) == str2.charAt(j))
+                {
+                    str += str1.charAt(i);
+                }
+            }
+        }
+        return str;
     }
-    
+
     public String uncommonWord()
     {
         String str = "";
+        if (str1.length() > str2.length())
+        {
+            for (int i = 0; i < str1.length(); i++)
+            {
+                for (int j = 0; j < str2.length(); j++)
+                {
+                    int c = 0;
+                    for (int k = 0; k < str.length(); k++)
+                    {
+                        if (str1.charAt(i) == str.charAt(k))
+                        {
+                            c++;
+                        }
+                    }
+                    if (str1.charAt(i) != str2.charAt(j) && c == 0)
+                    {
+                        str += str1.charAt(i);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < str2.length(); i++)
+            {
+                for (int j = 0; j < str1.length(); j++)
+                {
+                    int c = 0;
+                    for (int k = 0; k < str.length(); k++)
+                    {
+                        if (str2.charAt(i) == str.charAt(k))
+                        {
+                            c++;
+                        }
+                    }
+                    if (str2.charAt(i) != str1.charAt(j) && c == 0)
+                    {
+                        str += str2.charAt(i);
+                    }
+                }
+            }
+        }
         return str;
     }
 
@@ -95,5 +137,6 @@ public class UniqCharWord
         obj.in();
         String commonWord = obj.commonWord(), uncommonWord = obj.uncommonWord();
         System.out.println("Common Word: " + commonWord); 
+        System.out.println("Uncommon Word: " + uncommonWord); 
     }
 }
