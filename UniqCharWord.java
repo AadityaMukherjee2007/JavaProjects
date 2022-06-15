@@ -69,13 +69,23 @@ public class UniqCharWord
     
     public String commonWord()
     {
-        String str;
-        return str;
+        String str = "";
+	for (int i = 0; i < str1.length(); i++)
+	{
+		for (int j = 0; j < str2.length(); j++)
+		{
+			if (str1.charAt(i) == str2.charAt(j))
+			{
+				str += str1.charAt(i);
+			}
+		}
+	}
+	return str;
     }
     
     public String uncommonWord()
     {
-        String str;
+        String str = "";
         return str;
     }
 
