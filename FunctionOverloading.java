@@ -73,6 +73,7 @@ public class FunctionOverloading
                     break;
                 case 3 : 
                     {
+                        sc.nextLine();
                         System.out.print("Enter String: ");
                         String s1 = sc.nextLine();
                         System.out.print("Enter String: ");
