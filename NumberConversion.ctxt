@@ -3,7 +3,8 @@ comment0.target=NumberConversion
 comment1.params=n
 comment1.target=int\ reverse(int)
 comment2.params=n
-comment2.target=int\ toBinary(int)
+comment2.target=void\ toBinary(int)
+comment2.text=public\ int\ toBinary\ (int\ n)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ int\ copy\ \=\ n,\ temp\ \=\ 0;\n\ \ \ \ \ \ \ \ String\ binary\ \=\ "";\n\ \ \ \ \ \ \ \ while\ (copy\ \!\=\ 0)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ int\ r\ \=\ copy\ %\ 2;\n\ \ \ \ \ \ \ \ \ \ \ \ if\ (r\ \=\=\ 0)\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ *\=\ 10\ +\ 2;\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (r\ \=\=\ 1)\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ *\=\ 10\ +\ 1;\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n\n\ \ \ \ \ \ \ \ temp\ \=\ reverse(temp);\n\n\ \ \ \ \ \ \ \ while\ (temp\ \!\=\ 0)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ int\ r\ \=\ n\ %\ 10;\n\ \ \ \ \ \ \ \ \ \ \ \ if\ (r\ \=\=\ 1)\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ binary\ +\=\ "1";\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ binary\ +\=\ "0";\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n\n\ \ \ \ \ \ \ \ return\ Integer.valueOf(binary);\n}
 comment3.params=n
 comment3.target=int\ toOctal(int)
 comment4.params=args

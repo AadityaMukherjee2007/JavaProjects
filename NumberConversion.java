@@ -7,13 +7,13 @@ public class NumberConversion
         while (n != 0)
         {
             int r = n % 10;
-            rev *= 10 + r;
+            rev = rev * 10 + r;
             n /= 10;
         }
         return rev;
     }
 
-    public int toBinary (int n)
+    /*public int toBinary (int n)
     {
         int copy = n, temp = 0;
         String binary = "";
@@ -46,6 +46,38 @@ public class NumberConversion
         }
 
         return Integer.valueOf(binary);
+    }*/
+    
+    public void toBinary (int n)
+    {
+        int copy = n, temp = 0;
+        String binary = "";
+        while (copy != 0)
+        {
+            int r = copy % 2;
+            if (r == 0)
+            {
+                temp *= 10 + 2;
+            }
+            else if (r == 1)
+            {
+                temp *= 10 + 1;
+            }
+        }
+        
+        while (temp != 0)
+        {
+            int r = temp % 10;
+            if (r == 2)
+            {
+                System.out.print(0);
+            }
+            else
+            {
+                System.out.print(1);
+            }
+            temp /= 10;
+        }
     }
 
     public int toOctal (int n)
@@ -90,8 +122,8 @@ public class NumberConversion
         
         System.out.print("Decimal Number : ");
         int d = sc.nextInt();
-        
-        System.out.println("Binary : " + obj.toBinary(d));
+        obj.toBinary(d);
+        //System.out.println("Binary : " + obj.toBinary(d));
         System.out.println("Octal : " + obj.toOctal(d));
     }
 }
