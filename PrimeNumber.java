@@ -1,3 +1,6 @@
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 public class PrimeNumber
 {
     public static boolean check(int n)
@@ -23,8 +26,19 @@ public class PrimeNumber
     
     public static void main(String args[])
     {
-        int num = 1;
-        for (int i = 1; i <= 100; i++)
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+        int num = 1, range = 0;
+        try
+        {
+            System.out.print("Enter Range: ");
+            range = Integer.parseInt(sc.readLine());
+        }
+        catch (Exception IOException)
+        {
+            System.out.println("Error!");
+        }
+        
+        for (int i = 1; i <= range; i++)
         {
             while (true)
             {
