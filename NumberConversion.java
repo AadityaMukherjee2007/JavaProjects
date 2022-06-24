@@ -1,40 +1,29 @@
-import java.util.Scanner;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 public class NumberConversion
 {
-    public int reverse(int n)
+    public int toBinary (int n)
     {
-        int rev = 0;
+        int bin = 0;
+        String binary = "";
         while (n != 0)
         {
-            int r = n % 10;
-            rev = rev * 10 + r;
-            n /= 10;
-        }
-        return rev;
-    }
-
-    /*public int toBinary (int n)
-    {
-        int copy = n, temp = 0;
-        String binary = "";
-        while (copy != 0)
-        {
-            int r = copy % 2;
-            if (r == 0)
+            int r = n % 2;
+            if (r == 1)
             {
-                temp *= 10 + 2;
+                bin = bin * 10 + r;
             }
-            else if (r == 1)
+            else
             {
-                temp *= 10 + 1;
+                bin = bin * 10 + 2;
             }
+            n /= 2;
         }
-
-        temp = reverse(temp);
-
-        while (temp != 0)
+        
+        while (bin != 0)
         {
-            int r = n % 10;
+            int r = bin % 10;
             if (r == 1)
             {
                 binary += "1";
@@ -43,65 +32,32 @@ public class NumberConversion
             {
                 binary += "0";
             }
+            bin /= 10;
         }
-
         return Integer.valueOf(binary);
-    }*/
-    
-    public void toBinary (int n)
-    {
-        int copy = n, temp = 0;
-        String binary = "";
-        while (copy != 0)
-        {
-            int r = copy % 2;
-            if (r == 0)
-            {
-                temp *= 10 + 2;
-            }
-            else if (r == 1)
-            {
-                temp *= 10 + 1;
-            }
-        }
-        
-        while (temp != 0)
-        {
-            int r = temp % 10;
-            if (r == 2)
-            {
-                System.out.print(0);
-            }
-            else
-            {
-                System.out.print(1);
-            }
-            temp /= 10;
-        }
     }
-
+    
     public int toOctal (int n)
     {
-        int copy = n, temp = 0;
+        int oct = 0;
         String octal = "";
-        while (copy != 0)
+        while (n != 0)
         {
-            int r = copy % 2;
+            int r = n % 8;
             if (r == 0)
             {
-                temp *= 10 + 8;
+                oct = oct * 10 + 8;
             }
             else
             {
-                temp *= 10 + r;
+                oct = oct * 10 + r;
             }
+            n /= 8;
         }
-
-        temp = reverse(temp);
-
-        while (temp != 0)
+        
+        while (oct != 0)
         {
-            int r = n % 10;
+            int r = oct % 10;
             if (r == 8)
             {
                 octal += "0";
@@ -110,20 +66,78 @@ public class NumberConversion
             {
                 octal += String.valueOf(r);
             }
+            oct /= 10;
         }
-
         return Integer.valueOf(octal);
+    }
+    
+    public String toHex(int n)
+    {
+        String revHex = "", Hex = "";
+        while (n != 0)
+        {
+            int r = n % 16;
+            if (r == 0)
+            {
+                revHex += "0";
+            }
+            else if (0 <= r && r <= 9)
+            {
+                revHex += String.valueOf(r);
+            }
+            else if (r == 10)
+            {
+                revHex += "A";
+            }
+            else if (r == 11)
+            {
+                revHex += "B";
+            }
+            else if (r == 12)
+            {
+                revHex += "C";
+            }
+            else if (r == 13)
+            {
+                revHex += "D";
+            }
+            else if (r == 14)
+            {
+                revHex += "E";
+            }
+            else
+            {
+                revHex += "F";
+            }
+            n /= 16;
+        }
+        
+        int i = revHex.length() - 1;
+        while (i >= 0)
+        {
+            Hex += revHex.charAt(i);
+            i--;
+        }
+        return Hex;
     }
 
     public static void main(String args[])
     {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
         NumberConversion obj = new NumberConversion();
+        int dec = 0;
+        try
+        {
+            System.out.print("Decimal: ");
+            dec = Integer.parseInt(sc.readLine());
+        }
+        catch (IOException e)
+        {
+            System.out.print(e);
+        }
         
-        System.out.print("Decimal Number : ");
-        int d = sc.nextInt();
-        obj.toBinary(d);
-        //System.out.println("Binary : " + obj.toBinary(d));
-        System.out.println("Octal : " + obj.toOctal(d));
+        System.out.println("Binary: " + obj.toBinary(dec));
+        System.out.println("Octal: " + obj.toOctal(dec));
+        System.out.println("Hexadecimal: " + obj.toHex(dec));
     }
 }
