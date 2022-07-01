@@ -43,9 +43,11 @@ public class calc
             case '/' : c = a / b;
             break;
             case '^' : c = Math.pow(a, b);
+            break;
+            case '%' : c = a % b;
+            break; 
             case 'e' : System.exit(0);
             case 'q' : System.exit(0);
-            break;
             default : 
                 {
                     System.out.println("Error!\nEnter proper operator.");
