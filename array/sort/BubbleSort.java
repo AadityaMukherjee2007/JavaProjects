@@ -69,40 +69,6 @@ public class BubbleSort
         return arr;
     }
     
-    public void printArray(int[] arr)
-    {
-        System.out.print("[");
-        for (int i= 0; i < arr.length; i++)
-        {
-            if (i != arr.length - 1)    
-            {
-                System.out.print(arr[i] + ", ");
-            }
-            else
-            {
-                System.out.print(arr[i]);
-            }
-        }
-        System.out.println("]");
-    }
-    
-    public void printArray(double[] arr)
-    {
-        System.out.print("[");
-        for (int i = 0; i < arr.length; i++)
-        {
-            if (i != arr.length - 1)    
-            {
-                System.out.print(arr[i] + ", ");
-            }
-            else
-            {
-                System.out.print(arr[i]);
-            }
-        }
-        System.out.println("]");
-    }
-    
     public static void main(String args[])
     {
         System.out.println("Class Name: BubbleSort");
