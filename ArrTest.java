@@ -12,17 +12,12 @@ public class ArrTest
         String[] arr4 = {"Hello", "World"};
         
         Print obj = new Print();
-        //obj.print(arr1);
-        //obj.print(arr2);
-        /*obj.print(arr3);
-        obj.print(arr4);
-        /*
-        BubbleSort bubl = new BubbleSort();
+        /*BubbleSort bubl = new BubbleSort();
         double[] sorted = bubl.ascending(arr2);
         obj.print(sorted);*/
         
         SelectionSort sel = new SelectionSort();
-        int[] sort = sel.ascending(arr1);
+        double[] sort = sel.ascending(arr2);
         obj.print(sort);
         
         /*LinearSearch linear = new LinearSearch();
