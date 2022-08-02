@@ -5,7 +5,7 @@ public class SelectionSort
     {
         for (int i = 0; i < arr.length; i++)
         {
-            int small = arr[i], pos = 0;
+            int small = arr[i], pos = i;
             for (int j = i + 1; j < arr.length; j++)
             {
                 if (small > arr[j])
@@ -26,7 +26,7 @@ public class SelectionSort
         for (int i = 0; i < arr.length; i++)
         {
             double small = arr[i];
-            int pos = 0;
+            int pos = i;
             for (int j = i + 1; j < arr.length; j++)
             {
                 if (small > arr[j])
@@ -46,7 +46,7 @@ public class SelectionSort
     {
         for (int i = 0; i < arr.length; i++)
         {
-            int large = arr[i], pos = 0;
+            int large = arr[i], pos = i;
             for (int j = i + 1; j < arr.length; j++)
             {
                 if (large < arr[j])
@@ -67,7 +67,7 @@ public class SelectionSort
         for (int i = 0; i < arr.length; i++)
         {
             double large = arr[i];
-            int pos = 0;
+            int pos = i;
             for (int j = i + 1; j < arr.length; j++)
             {
                 if (large < arr[j])
