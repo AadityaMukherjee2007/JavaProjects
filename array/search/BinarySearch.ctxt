@@ -2,8 +2,7 @@
 comment0.target=BinarySearch
 comment1.params=arr\ n
 comment1.target=boolean\ search(int[],\ int)
-comment2.params=arr\ n
-comment2.target=boolean\ search(double[],\ double)
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
-numComments=4
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ \ \ \ public\ boolean\ search(double[]\ arr,\ double\ n)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ arr\ \=\ new\ SelectionSort().ascending(arr);\r\n\ \ \ \ \ \ \ \ return\ false;\r\n}
+numComments=3

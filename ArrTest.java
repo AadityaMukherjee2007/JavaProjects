@@ -1,6 +1,7 @@
 import array.sort.BubbleSort;
 import array.sort.SelectionSort;
 import array.search.LinearSearch;
+import array.search.BinarySearch;
 import array.util.Print;
 public class ArrTest
 {
@@ -19,6 +20,9 @@ public class ArrTest
         SelectionSort sel = new SelectionSort();
         double[] sort = sel.ascending(arr2);
         obj.print(sort);
+        
+        BinarySearch binary = new BinarySearch();
+        System.out.println(binary.search(arr1, 90));
         
         /*LinearSearch linear = new LinearSearch();
         System.out.println(linear.search(arr2, 6.9));*/
