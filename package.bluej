@@ -2,9 +2,9 @@
 dependency1.from=CityTrial
 dependency1.to=City
 dependency1.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
+editor.fx.0.height=822
+editor.fx.0.width=780
+editor.fx.0.x=761
 editor.fx.0.y=0
 objectbench.height=102
 objectbench.width=743
