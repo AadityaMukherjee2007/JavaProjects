@@ -1,26 +1,28 @@
-import array.util.Print;
-public class test
+<!DOCTYPE html>
+<html>
+<head>
+<title>ESP Web Server</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.b
 {
-    public static void main(String args[])
-    {
-        Print obj = new Print();
-        int[] arr = {5, 3, 8, 4, 9, 2, 1, 12, 90, 15};
-        for (int i = 0; i < arr.length; i++)
-        {
-            int small = arr[i], pos = i;
-            for (int j = i + 1; j < arr.length; j++)
-            {
-                if (arr[j] < small)
-                {
-                    small = arr[j];
-                    pos = j;
-                }
-            }
-            int tmp = arr[i];
-            arr[i] = arr[pos];
-            arr[pos] = tmp;
-        }
-        
-        obj.print(arr);
-    }
+text-decoration: none;
+border: none;
+background-color: grey;
+color: white;
+padding: 15px 30px;
 }
+</style>
+
+</head>
+
+<body>
+<h1>Inbuilt LED</h1>
+<p>GPIO state: """ + gpio_state + """
+<p>
+<a href="/?led=on"><button class="b" style="margin-right: 10px;">ON</button></a>
+<a href="/?led=off"><button class="b">OFF</button></a>
+</p>
+</body>	
+</html>
