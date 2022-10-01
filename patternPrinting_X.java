@@ -55,11 +55,6 @@ public class patternPrinting_X
                     System.out.print(" ");
                 }
             }
-            if (i == 1)
-            {
-                System.out.println();
-                continue;
-            }
             for (int l = (i - 1); l >= 1; l--)
             {
                 if (l == 1)
