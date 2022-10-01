@@ -2,3 +2,5 @@ auth
 Email address:  aaditya.mukherjee2007@gmail.com
 Key ID: 0049D7E9B7C9C1B4
 Subkeys: 764E4A16DE829C11
+gpg: key 0049D7E9B7C9C1B4
+git config --global user.signingkey 0049D7E9B7C9C1B4
