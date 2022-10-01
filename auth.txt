@@ -1,1 +1,4 @@
-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
+auth
+Email address:  aaditya.mukherjee2007@gmail.com
+Key ID: 0049D7E9B7C9C1B4
+Subkeys: 764E4A16DE829C11
