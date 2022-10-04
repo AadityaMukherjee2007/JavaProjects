@@ -15,13 +15,30 @@ public class test
 			arr[i] = sc.nextInt();
 		}
 	}
+	
+	public int[] bubbleSort(int[] arr)
+	{
+		for (int i = 0; i < arr.length; i++)
+		{
+			for (int j = 0; j < arr.length - 1; j++)
+			{
+				if (arr[j] > arr[j + 1])
+				{
+					arr[j] = arr[j] + arr[j + 1];
+					arr[j + 1] = arr[j] - arr[j + 1];
+					arr[j] = arr[j] - arr[j + 1];
+				}
+			}
+		}
+		return arr;
+	}
 
 	public void print(int[] array)
 	{
 		System.out.print("\n[");
-		for (int i = array.length - 1; i >= 0; i--)
+		for (int i = 0; i < array.length; i++)
 		{
-			if (i != 0)
+			if (i != array.length - 1)
 			{
 				System.out.print(array[i] + ", ");
 			}
@@ -37,6 +54,11 @@ public class test
 	{
 		test obj = new test();
 		obj.in();
+		System.out.print("\nInputted Array: ");
+		obj.print(obj.arr);
+
+		obj.arr = obj.bubbleSort(obj.arr);
+		System.out.print("\nSorted Array: ");
 		obj.print(obj.arr);
 	}
 }
