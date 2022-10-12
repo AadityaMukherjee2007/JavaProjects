@@ -1,28 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>ESP Web Server</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-.b
+import java.util.Scanner;
+public class test
 {
-text-decoration: none;
-border: none;
-background-color: grey;
-color: white;
-padding: 15px 30px;
+	public int[] arr;
+	public void in()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter array size: ");
+		int n = sc.nextInt();
+
+		arr = new int[n];
+		for (int i = 0; i < arr.length; i++)
+		{
+			System.out.print("Enter data: ");
+			arr[i] = sc.nextInt();
+		}
+	}
+	
+	public int[] bubbleSort(int[] arr)
+	{
+		for (int i = 0; i < arr.length; i++)
+		{
+			for (int j = 0; j < arr.length - 1; j++)
+			{
+				if (arr[j] > arr[j + 1])
+				{
+					arr[j] = arr[j] + arr[j + 1];
+					arr[j + 1] = arr[j] - arr[j + 1];
+					arr[j] = arr[j] - arr[j + 1];
+				}
+			}
+		}
+		return arr;
+	}
+
+	public void print(int[] array)
+	{
+		System.out.print("\n[");
+		for (int i = 0; i < array.length; i++)
+		{
+			if (i != array.length - 1)
+			{
+				System.out.print(array[i] + ", ");
+			}
+			else
+			{
+				System.out.print(array[i]);
+			}
+		}
+		System.out.println("]");
+	}
+
+	public static void main(String args[])
+	{
+		test obj = new test();
+		obj.in();
+		System.out.print("\nInputted Array: ");
+		obj.print(obj.arr);
+
+		obj.arr = obj.bubbleSort(obj.arr);
+		System.out.print("\nSorted Array: ");
+		obj.print(obj.arr);
+	}
 }
-</style>
-
-</head>
-
-<body>
-<h1>Inbuilt LED</h1>
-<p>GPIO state: """ + gpio_state + """
-<p>
-<a href="/?led=on"><button class="b" style="margin-right: 10px;">ON</button></a>
-<a href="/?led=off"><button class="b">OFF</button></a>
-</p>
-</body>	
-</html>
