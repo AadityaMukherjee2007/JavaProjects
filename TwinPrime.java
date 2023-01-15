@@ -7,6 +7,10 @@ public class TwinPrime
         {
             return true;
         }
+        else if (n == 1)
+        {
+            return false;
+        }
         for (int i = 2; i < n; i++)
         {
             if (n % i == 0)
@@ -23,11 +27,11 @@ public class TwinPrime
         System.out.print("Enter Range: ");
         int r = sc.nextInt();
         
-        for (int i = 1; i <= 100; i++)
+        for (int i = 1; i <= r; i++)
         {
             if (prime(i) && prime(i + 2))
             {
-                System.out.println(i + " - " + (i + 2));
+                System.out.println(i + ", " + (i + 2));
             }
         }
     }

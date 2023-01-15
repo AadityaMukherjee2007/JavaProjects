@@ -4,29 +4,28 @@ import java.io.IOException;
 
 public class SentenceReverse
 {
-	public String reverse(String s)
-	{
-		for (int i = s.length() - 1; i >= 0 i--)
-		{
-			if 
-		}
-	}
+    public String reverse(String s)
+    {
+        StringBuffer str = new StringBuffer(s);
+        str.reverse();
+        return str.toString();
+    }
 
-	public static void main(String args[])
-	{
-		BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
-		String str = "";
-		try
-		{
-			System.out.print("Enter Sentence: ");
-			str = sc.readLine();
-			
-			SentenceReverse obj = new SentenceReverse();
-			System.out.println(obj.reverse(str));
-		}
-		catch(IOException e)
-		{
-			System.out.println("Error!");
-		}
-	}
+    public static void main(String args[])
+    {
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+        String str = "";
+        try
+        {
+            System.out.print("Enter Sentence: ");
+            str = sc.readLine();
+            
+            SentenceReverse obj = new SentenceReverse();
+            System.out.println(obj.reverse(str));
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error!");
+        }
+    }
 }
