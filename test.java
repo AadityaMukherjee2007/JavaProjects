@@ -1,70 +1,49 @@
 import java.util.Scanner;
-
 public class test 
 {
-    public int[] sort(int[] arr)
+    private int[] arr;
+    private int max = 0, min = 0;
+    public void in()
     {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Array Length: ");
+        int l = sc.nextInt();
+        
+        this.arr = new int[l];
+        
         for (int i = 0; i < arr.length; i++)
         {
-            int small = arr[i], loc = i;
-            for (int j = i + 1; j < arr.length; j++)
+            System.out.print("Enter data: ");
+            arr[i] = sc.nextInt();
+        }
+    }
+    
+    public int max(int[] arr)
+    {
+        max = arr[0];
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (max < arr[i])
             {
-                if (small > arr[j])
-                {
-                    small = arr[j];
-                    loc = j;
-                }
+                max = arr[i];
             }
-            int tmp = arr[i];
-            arr[i] = small;
-            arr[loc] = tmp;
         }
-        return arr;
+        return max;
     }
-
-    public void freq(int[] arr)
+    
+    public int min(int[] arr)
     {
-        arr = this.sort(arr);
-        int set = arr[0];
-        System.out.println("Frequency: ");
+        min = arr[0];
         for (int i = 0; i < arr.length; i++)
         {
-           int c = 1;
-           for (int j = i + 1; j < arr.length; j++)
-           {
-                if (i != 0)
-                {
-                    if (arr[i] != set)
-                    {
-                        if (arr[j] == arr[i])
-                        {
-                            arr[j] = set;
-                            c++;
-                        }
-                    }
-                    else
-                    {
-                        c = 0;
-                        break;
-                    }
-                }
-                else
-                {
-                    if (arr[j] == arr[i])
-                    {
-                        arr[j] = set;
-                        c++;
-                    }
-                }
-           } 
-           if (c == 0)
-           {
-                continue;
-           }
-           System.out.println(arr[i] + " : " + c);
+            if (min > arr[i])
+            {
+                min = arr[i];
+            }
         }
+        return min;
     }
-
+    
     public void print(int[] arr)
     {
         System.out.print("[");
@@ -81,14 +60,64 @@ public class test
         }
         System.out.println("]");
     }
-
+    
+    public double mean(int[] arr)
+    {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++)
+        {
+            sum += arr[i];
+        }
+        double mean = (double) sum / arr.length;
+        return mean;
+    }
+    
+    public double median(int[] arr)
+    {
+        int n = arr.length;
+        double median = 0;
+        if (n % 2 == 0)
+        {
+            median = (arr[n/2] + arr[(n+1)/2])/2;
+        }
+        else
+        {
+            median = arr[(n+1)/2];
+        }
+        return median;
+    }
+    
+    public int mode(int[] arr)
+    {
+        int mode = 0, c = 0; 
+        for (int i = 0; i < arr.length; i++)
+        {
+            int occ = 0;
+            for (int j = 0; j < arr.length; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    occ++;
+                }
+            }
+            if (occ > c)
+            {
+                c = occ;
+                mode = arr[i];
+            }
+        }
+        return mode;
+    }
+    
     public static void main(String[] args) 
     {
-        int[] array = {3, 1, 4, 5, 6, 9, 2, 5, 5, 4, 3, 3, 8, 9, 9, 9, 1, 1, 2, 6, 8, 3, 3, 2, 0, 6, 7};
         test obj = new test();
-        obj.print(array);
-        //obj.sort(array);
-        //obj.print(array);
-        obj.freq(array);
+        obj.in();
+        obj.print(obj.arr);
+        System.out.println("Max: " + obj.max(obj.arr));
+        System.out.println("Min: " + obj.min(obj.arr));
+        System.out.println("Mean: " + obj.mean(obj.arr));
+        System.out.println("Median: " + obj.median(obj.arr));
+        System.out.println("Mode: " + obj.mode(obj.arr));
     }
 }
