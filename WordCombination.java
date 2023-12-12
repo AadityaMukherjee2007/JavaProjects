@@ -18,7 +18,7 @@ public class WordCombination
         com(s);
         for (int i = 0; i < n; i++)
         {
-            for (int )
+            //for (int )
         }
     }
 
