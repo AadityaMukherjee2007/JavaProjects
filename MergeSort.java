@@ -76,9 +76,8 @@ public class MergeSort
 		int[] smaller = min(a, b);
 		int[] larger = max(a, b);
 
-		while (j < smaller.length)
-		{
-			if (larger[i] > smaller[j])
+		while (i < larger.length)
+		{			if (larger[i] > smaller[j])
 			{
 				sorted[c] = smaller[j];
 				j++;
@@ -92,9 +91,9 @@ public class MergeSort
 			}
 		}
 
-		for (int k = i; k < larger.length; k++, c++)
+		for (int k = j; j < smaller.length; j++, c++)
 		{
-			sorted[c] = larger[k];
+			sorted[c] = smaller[k];
 		}
 
 		return sorted;
@@ -117,7 +116,7 @@ public class MergeSort
 	{
 		MergeSort obj = new MergeSort();
 		int[] c = obj.merge(obj.a, obj.b);
-		
+
 		System.out.println();
 		obj.print(c);
 	}
